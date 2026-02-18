@@ -1,0 +1,300 @@
+/* ======================
+   共通
+====================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ======================
+   ヘッダー
+====================== */
+
+.header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-inner {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2099eb;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #2099eb;
+  font-size: 14px;
+}
+
+/* ======================
+   メインビジュアル
+====================== */
+
+.hero {
+  position: relative;
+  height: 500px;
+  background: url("images/main-img.png") center / cover no-repeat;
+}
+
+.hero-copy {
+  width: 360px;
+  height: auto;
+  position: absolute;
+  top: 25%;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4));
+}
+
+/* ======================
+   About
+====================== */
+
+.about {
+  padding: 100px 0;
+  background: #f3f3f6;
+}
+
+.section-title {
+  text-align: center;
+  margin: 80px 0 60px;
+}
+
+.section-title img {
+  height: 36px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image img {
+  width: 450px;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+}
+
+.about-text {
+  max-width: 480px;
+}
+
+.about-text h3 {
+  font-size: 20px;
+  margin: 0 0 20px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.about-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 1em;
+}
+
+/* ボタン */
+
+.more-btn {
+  display: inline-block;
+  padding: 12px 45px;
+  border: 1px solid #2099eb;
+  color: #2099eb;
+  text-decoration: none;
+  font-size: 12px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.more-btn:hover {
+  background: #2099eb;
+  color: #fff;
+}
+
+/* ======================
+   フッター
+====================== */
+
+.footer {
+  background: #fff;
+  padding: 60px 0 20px;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 0 0 30px;
+  margin: 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.footer-nav a {
+  color: #2099eb;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  color: #9e9e9e;
+  margin: 20px 0 0;
+}
+
+/* ======================
+   ページトップ
+====================== */
+
+.pagetop {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 40px;
+  height: 40px;
+  background: #f7941d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagetop::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: rotate(45deg);
+}
+
+
+/* ======================
+   レスポンシブ（768px以下）
+====================== */
+
+@media (max-width: 768px) {
+
+  /* 共通余白調整 */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* ---------- ヘッダー ---------- */
+
+  .header-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+    gap: 15px;
+  }
+
+  .nav-list {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ---------- メインビジュアル ---------- */
+
+  .hero {
+    height: 350px;
+  }
+
+  .hero-copy {
+    width: 70%;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* ---------- About ---------- */
+
+  .about {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    margin: 60px 0 40px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-text h3 {
+    font-size: 18px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+  }
+
+  .more-btn {
+    font-size: 14px;
+    padding: 14px 40px;
+  }
+
+  /* ---------- フッター ---------- */
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* ---------- ページトップ ---------- */
+
+  .pagetop {
+    width: 36px;
+    height: 36px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+}
